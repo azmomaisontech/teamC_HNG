@@ -8,6 +8,7 @@ body {
 :root {
   --primary-color: #eba12a;
   --footer-bg: #aaaa55;
+  --nav-link-color: #232322;
 }
 
 /* Reset */
@@ -19,8 +20,180 @@ body {
 
 /* Utilities  */
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   padding: 0 2rem;
   margin: auto;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.underline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.line {
+  width: 473px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.box {
+  width: 30px;
+  height: 30px;
+  transform: rotate(-44.88deg);
+  background: var(--primary-color);
+  margin: 0 2rem;
+}
+
+/* header */
+
+/* header nav */
+#header-nav {
+  background: var(--primary-color);
+}
+
+#header-nav ul {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: flex-end;
+}
+
+#header-nav a {
+  color: white;
+}
+
+#header-nav li {
+  color: white;
+  margin-left: 2rem;
+}
+
+/* main nav */
+#main-nav {
+  margin-bottom: var(--primary-color);
+}
+
+#main-nav > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main-nav ul {
+  display: flex;
+}
+
+#main-nav li {
+  margin-left: 2rem;
+}
+
+#main-nav a {
+  color: var(--nav-link-color);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+/* Main */
+#facility-main {
+  min-height: 83vh;
+  background: #fff url("../assets/facilities_header_2.png") center center/cover;
+  position: relative;
+  display: flex;
+}
+
+#facility-main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+#facility-main .container {
+  text-align: center;
+}
+
+#facility-main * {
+  z-index: 101;
+}
+
+#facility-main h2 {
+  color: white;
+  letter-spacing: 0.15rem;
+  font-size: 3rem;
+  line-height: 6rem;
+  font-weight: 500;
+}
+
+/* Section: Overview */
+#overview {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+#overview h2 {
+  color: var(--primary-color);
+  letter-spacing: 0.15rem;
+  font-size: 2.5rem;
+  line-height: 6rem;
+  font-weight: 500;
+}
+
+#overview .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+}
+
+#overview .item img {
+  width: 100%;
+}
+
+#overview .item p {
+  text-align: center;
+}
+
+#overview .item h3 {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Section: Offer */
+
+#offer {
+  padding: 3rem 0;
+  background: #fff url("../assets/inside_lobby_1.png") center center/cover;
+  position: relative;
+  display: flex;
+}
+
+#facility-main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+#offer .container {
+}
+
+#offer * {
+  z-index: 101;
 }
