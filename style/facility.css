@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap');
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: #f9f9f9;
 }
 
@@ -28,6 +28,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 li {
@@ -53,6 +54,31 @@ li {
   transform: rotate(-44.88deg);
   background: var(--primary-color);
   margin: 0 2rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+input {
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+}
+
+input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input[type='submit'] {
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* header */
@@ -106,13 +132,13 @@ li {
 /* Main */
 #facility-main {
   min-height: 83vh;
-  background: #fff url("../assets/facilities_header_2.png") center center/cover;
+  background: #fff url('../assets/facilities_header_2.png') center center/cover;
   position: relative;
   display: flex;
 }
 
 #facility-main:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -172,28 +198,189 @@ li {
 }
 
 /* Section: Offer */
-
 #offer {
-  padding: 3rem 0;
-  background: #fff url("../assets/inside_lobby_1.png") center center/cover;
+  min-height: 83vh;
+  padding: 3rem;
+  background: #fff url('../assets/inside_lobby_1.png') center center/cover;
   position: relative;
-  display: flex;
+  /* display: flex; */
 }
 
-#facility-main:before {
-  content: "";
+#offer:after {
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
 
 #offer .container {
+  color: #ffffff;
+}
+
+#offer .container h2 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+#offer .container h3 {
+  padding: 0.6rem 2rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+#offer .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #offer * {
   z-index: 101;
+}
+
+/* Footer */
+#footer-main {
+  background: var(--footer-bg);
+  color: #fff;
+}
+
+.footer-info h3 {
+  padding-bottom: 2rem;
+}
+
+#footer-main h2,
+#footer-main p {
+  padding-bottom: 1rem;
+}
+
+.footer-sub input[type='email'] {
+  min-width: 300px;
+}
+
+.footer-sub input[type='submit'] {
+  margin-left: -1rem;
+  border-radius: 0 6px 6px 0;
+}
+
+#footer-main .footer-nav {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+#footer-main .footer-nav ul {
+  display: flex;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  justify-content: space-evenly;
+}
+
+#footer-main .footer-nav ul li {
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+#footer-main .footer-nav img {
+  background: #fff;
+  width: 120px;
+}
+
+#footer-main .footer-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+/* ===================NOT WORKING YET===================== */
+
+
+
+
+
+/* BURGER */
+
+.burger {
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+
+.burger .line:first-child {
+  width: 12px;
+}
+
+.burger .line {
+  display: block;
+  background: var(--primary-color);
+  height: 2px;
+  width: 25px;
+  margin: 12px;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+  .burger {
+    display: block;
+  }
+
+  .nav-menu {
+    width: 100vw;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    left: 0px;
+    height: 100vh;
+    transform: translateY(-100%);
+    transition: transform 1s 0s ease-in-out;
+  }
+
+  .nav-menu li {
+    margin: 20px;
+    opacity: 0;
+  }
+
+  .nav-menu li a {
+    color: #ffffff;
+  }
+
+  .nav-active {
+    background: #313131;
+    transform: translateY(0%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line:first-child {
+    width: 24px;
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line:last-child {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
